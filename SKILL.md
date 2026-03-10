@@ -1,3 +1,8 @@
+---
+name: git-manager
+description: Advanced Git operations support for bisecting regressions, cleaning up branches, managing stash workflows, and analyzing commit/history state. Use when users ask for "git bisect", branch cleanup, stash recovery/organization, reflog or log analysis, or safe handling of destructive/history-rewriting commands.
+---
+
 # git-manager
 
 ## Summary
