@@ -5,7 +5,9 @@
 ## Quick start
 1. Trigger the skill with a command like `git manager` or `bisect issue` inside a repository.
 2. Follow the prompts for diagnostics, branch cleanup, stash review, or log analysis.
-3. Execute the suggested commands and confirm before destructive operations such as `branch -D`, `reset`, or `push --force`.
+3. Execute the suggested commands and confirm before destructive operations such as `git branch -D`, `git reset --hard`, `git clean -fd`, or `git push --force` (the skill prefers `git push --force-with-lease` unless the user explicitly authorizes raw `--force`).
+
+Every destructive recommendation uses a two-step confirmation protocol: show the current branch and HEAD commit/tag, outline a backup action (tag, temporary branch, stash/export), and then require an explicit `YES` before running `branch -D`, `reset --hard`, `git clean -fd`, or any forced push. This reinforces the safeguards embedded in the skill's workflow.
 
 ## Core focus areas
 - **Bisecting regressions** with explicit good/bad checkpoints and safety reminders.
